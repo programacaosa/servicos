@@ -1,1 +1,196 @@
-dc106069654145cb34a46003f314463a8bbfef32
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestadores de Serviços</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .banner {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .banner h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        .search-bar {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Muda para garantir espaçamento */
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            flex: 0 1 calc(50% - 20px); /* Dois cards lado a lado */
+            margin: 10px; /* Margem entre os cards */
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box; /* Inclui o padding na largura total */
+        }
+
+        .card i {
+            font-size: 3em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .card h5 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-icons a {
+            margin: 0 10px;
+            color: #333;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        /* Estilos para responsividade */
+        @media (max-width: 768px) {
+            .card {
+                flex: 0 1 calc(50% - 20px); /* Dois cards lado a lado em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 0 1 calc(50% - 20px); /* Dois cards lado a lado também em telas pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner com Campo de Pesquisa -->
+    <section class="banner">
+        <h1>Encontre Prestadores de Serviços</h1>
+        <p>Pesquise pelos melhores profissionais na sua região.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Digite o serviço que procura...">
+        </div>
+    </section>
+
+    <!-- Cards de Prestadores de Serviços -->
+    <section class="cards-container">
+        <!-- Card 1 -->
+
+        <!-- Card 2 -->
+        <div class="card">
+            <i class="fas fa-toolbox"></i>
+            <h5>Eletricista</h5>
+            <p>Instalações e reparos elétricos.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <i class="fas fa-utensils"></i>
+            <h5>Cozinheiro</h5>
+            <p>Cozinha deliciosa e serviço de buffet.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <i class="fas fa-paint-brush"></i>
+            <h5>Pintor</h5>
+            <p>Pintura residencial e comercial.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <i class="fas fa-broom"></i>
+            <h5>Faxineiro</h5>
+            <p>Serviço de limpeza completo.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="card">
+            <i class="fas fa-plumber"></i>
+            <h5>Encanador</h5>
+            <p>Resolução de problemas hidráulicos.</p>
+        </div>
+        <!-- Card 7 -->
+        <div class="card">
+            <i class="fas fa-wrench"></i>
+            <h5>Mecânico</h5>
+            <p>Reparos e manutenção de veículos.</p>
+        </div>
+        <!-- Card 8 -->
+        
+        <!-- Card 9 -->
+        
+        
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="#"><i class="fas fa-futbol"></i></a>
+            <a href="#"><i class="fas fa-folder"></i></a>
+            <a href="#"><i class="fas fa-book"></i></a>
+            <a href="#"><i class="fas fa-users"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+        <p>&copy; 2024 Prestadores de Serviços. Todos os direitos reservados.</p>
+    </footer>
+
+    <button class="chat-icon" onclick="alert('Iniciar chat!')">
+        <i class="fas fa-comment"></i>
+    </button>
+</body>
+</html>
