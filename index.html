@@ -41,16 +41,16 @@
             box-shadow: none;
             border-color: white;
         }
-        .btn-custom {
+        .btn-custom, .btn-signup {
             background: transparent;
             border: 1px solid white;
             border-radius: 20px;
             color: white;
             padding: 10px 20px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             width: 100%;
         }
-        .btn-custom:hover {
+        .btn-custom:hover, .btn-signup:hover {
             background: white;
             color: black;
         }
@@ -67,6 +67,7 @@
             color: white;
             padding: 10px 20px;
             width: 100%;
+            margin-bottom: 15px; /* Adicionando margem inferior */
         }
         .btn-facebook i {
             margin-right: 10px;
@@ -79,18 +80,20 @@
         <form>
             <div class="mb-3">
                 <i class="fas fa-envelope"></i>
-                <input type="email" class="form-control" id="email" readonly value="jardson.araujo@gmail.com">
+                <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
             </div>
             <div class="mb-3">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="form-control" id="password" readonly value="********">
+                <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
             </div>
-            <button type="submit" class="btn btn-custom">Sign in</button>
+            <button type="submit" class="btn btn-custom">Fazer Login</button>
         </form>
         <a href="#" class="forgot-password">Forgot Password?</a>
         <button class="btn btn-facebook">
-            <i class="fab fa-facebook-f"></i> Sign in with Facebook
+            <i class="fab fa-facebook-f"></i> Login com Facebook
         </button>
+        <button class="btn btn-signup">Cadastre-se como Profissional</button>
+        <button class="btn btn-signup">Cadastre-se como Cliente</button>
     </div>
 </body>
 </html>
