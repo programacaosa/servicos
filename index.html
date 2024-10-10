@@ -6,23 +6,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background: url('https://i.pinimg.com/564x/cb/96/31/cb9631d4ab69d7aacae2e74404027339.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
             font-family: Arial, sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0;
+            overflow: hidden; /* Evita rolagem */
+        }
+        .background-slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Fica atrás do conteúdo */
+            overflow: hidden;
+        }
+        .background-slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 2s ease-in-out; /* Suavidade na troca das imagens */
+        }
+        .background-slideshow img.active {
+            opacity: 1; /* Imagem ativa visível */
         }
         .login-container {
             text-align: center;
             width: 90%;
             max-width: 320px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8); /* Aumentar opacidade */
-            border-radius: 10px;
+            background: rgba(0, 100, 0, 0.6); /* Fundo verde escuro mais transparente */
+            border-radius: 20px; /* Borda mais arredondada */
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
         .login-container img {
@@ -36,14 +54,14 @@
             border-radius: 0;
             color: white;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombras de texto para entradas */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
         .form-control:focus {
             box-shadow: none;
             border-color: white;
         }
         .btn-custom, .btn-signup {
-            background: linear-gradient(90deg, #1e90ff, #00bfff); /* Gradiente azul */
+            background: linear-gradient(90deg, #1e90ff, #00bfff);
             border: none;
             border-radius: 20px;
             color: white;
@@ -52,7 +70,7 @@
             width: 100%;
         }
         .btn-custom:hover, .btn-signup:hover {
-            background: #00bfff; /* Azul mais claro no hover */
+            background: #00bfff;
             color: black;
         }
         .forgot-password {
@@ -62,13 +80,13 @@
             display: block;
         }
         .btn-facebook {
-            background: linear-gradient(90deg, #3b5998, #8b9dc3); /* Gradiente Facebook */
+            background: linear-gradient(90deg, #3b5998, #8b9dc3);
             border: none;
             border-radius: 20px;
             color: white;
             padding: 10px 20px;
             width: 100%;
-            margin-bottom: 15px; /* Margem inferior */
+            margin-bottom: 15px;
         }
         .btn-facebook i {
             margin-right: 10px;
@@ -76,6 +94,12 @@
     </style>
 </head>
 <body>
+    <div class="background-slideshow">
+        <img src="https://i.pinimg.com/736x/16/3d/0f/163d0fe3db2af9fc9cf47f8ccf90de26.jpg" class="active" alt="Background 1">
+        <img src="https://i.pinimg.com/564x/64/50/ca/6450ca381915019468ca5d94f924b1cf.jpg" alt="Background 2">
+        <img src="https://i.pinimg.com/564x/76/4f/85/764f85b32af5f9f00ff1727b3874da54.jpg" alt="Background 3">
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
     <div class="login-container">
         <img src="https://storage.googleapis.com/a1aa/image/LwKuSZJxAuYXJlYjBKzfId8ubGajkdYmfEzgVKFVowqaZeKnA.jpg" alt="Paper airplane icon" height="50" width="50">
         <form>
@@ -96,5 +120,18 @@
         <button class="btn btn-signup">Cadastre-se como Profissional</button>
         <button class="btn btn-signup">Cadastre-se como Cliente</button>
     </div>
+
+    <script>
+        const slides = document.querySelectorAll('.background-slideshow img');
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(showNextSlide, 5000); // Troca de imagem a cada 5 segundos
+    </script>
 </body>
 </html>
