@@ -13,6 +13,15 @@
 
         .banner {
             height: 400px;
+            position: relative; /* Para posicionar o campo de pesquisa */
+        }
+
+        .search-input {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Largura do campo de pesquisa */
         }
 
         .card {
@@ -131,7 +140,7 @@
         </nav>
     </header>
 
-    <!-- Banner com Carrossel de Imagens -->
+    <!-- Banner com Carrossel de Imagens e Campo de Pesquisa -->
     <section>
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade banner" data-ride="carousel" data-interval="2000">
             <ol class="carousel-indicators">
@@ -163,39 +172,114 @@
                 <span class="sr-only">Próximo</span>
             </a>
         </div>
+        
+        <!-- Campo de Pesquisa -->
+        <div class="search-input">
+            <input type="text" class="form-control" placeholder="Pesquisar serviços..." aria-label="Pesquisar">
+        </div>
     </section>
 
-    <!-- Cards -->
+    <!-- Cards dos Prestadores de Serviços -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://i.pinimg.com/564x/cc/09/19/cc09192fd69342862940cd6ad9aa816c.jpg" class="card-img-top" alt="Serviço 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Temos os melhores profissionais em nosso app</h5>
-                            <p class="card-text">As melhores profissionais na aréa de carpintária.</p>
-                            <a href="#" class="btn btn-custom">Saiba Mais</a>
+                        <div class="card-body text-center">
+                            <i class="fas fa-hammer fa-3x"></i>
+                            <h5 class="card-title">Carpinteiro</h5>
+                            <p class="card-text">Serviços de carpintaria de alta qualidade.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- Card 2 -->
+                <div class="col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://i.pinimg.com/564x/61/35/6b/61356b00a2b1f137426b97b5327863c7.jpg" class="card-img-top" alt="Serviço 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Contrate um motorista</h5>
-                            <p class="card-text">Temos motoristas particular</p>
-                            <a href="#" class="btn btn-custom">Saiba Mais</a>
+                        <div class="card-body text-center">
+                            <i class="fas fa-car fa-3x"></i>
+                            <h5 class="card-title">Motorista</h5>
+                            <p class="card-text">Motoristas particulares disponíveis.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- Card 3 -->
+                <div class="col-md-6 mb-4">
                     <div class="card">
-                        <img src="https://tacontratado.com.br/wp-content/uploads/2021/05/presta-001.jpg" class="card-img-top" alt="Serviço 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Profissionais qualificados</h5>
-                            <p class="card-text">Contrate com segurança.</p>
-                            <a href="#" class="btn btn-custom">Saiba Mais</a>
+                        <div class="card-body text-center">
+                            <i class="fas fa-utensils fa-3x"></i>
+                            <h5 class="card-title">Cozinheiro</h5>
+                            <p class="card-text">Cozinha deliciosa e serviço de buffet.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-paint-brush fa-3x"></i>
+                            <h5 class="card-title">Pintor</h5>
+                            <p class="card-text">Pintura residencial e comercial.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-broom fa-3x"></i>
+                            <h5 class="card-title">Faxineiro</h5>
+                            <p class="card-text">Serviço de limpeza completo.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-plumber fa-3x"></i>
+                            <h5 class="card-title">Encanador</h5>
+                            <p class="card-text">Resolução de problemas hidráulicos.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-wrench fa-3x"></i>
+                            <h5 class="card-title">Mecânico</h5>
+                            <p class="card-text">Reparos e manutenção de veículos.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cut fa-3x"></i>
+                            <h5 class="card-title">Cabeleireiro</h5>
+                            <p class="card-text">Corte e estilo de cabelo profissional.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop fa-3x"></i>
+                            <h5 class="card-title">Técnico de Informática</h5>
+                            <p class="card-text">Suporte técnico para computadores.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-baby fa-3x"></i>
+                            <h5 class="card-title">Babá</h5>
+                            <p class="card-text">Cuidados com crianças de todas as idades.</p>
                         </div>
                     </div>
                 </div>
@@ -205,31 +289,22 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-icons">
-                <a href="#" class="fab fa-facebook"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-twitter"></a>
-            </div>
-            
+        <div class="footer-icons">
+            <a href="#"><i class="fas fa-futbol"></i></a>
+            <a href="#"><i class="fas fa-folder"></i></a>
+            <a href="#"><i class="fas fa-book"></i></a>
+            <a href="#"><i class="fas fa-users"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
         </div>
+        <p>&copy; 2024 Prestadores de Serviços. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Botão de Chat -->
-    <button class="chat-icon" onclick="openChat()">
-        <i class="fas fa-comments"></i>
+    <button class="chat-icon" onclick="alert('Iniciar chat!')">
+        <i class="fas fa-comment"></i>
     </button>
 
-    <!-- Script para o chat -->
-    <script>
-        function openChat() {
-            // Aqui você pode adicionar a lógica para abrir a janela de chat.
-            alert('Fale com nossa IA treinada!');
-        }
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
