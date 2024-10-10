@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            overflow: hidden; /* Evita rolagem */
+            overflow: hidden;
         }
         .background-slideshow {
             position: fixed;
@@ -20,7 +20,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Fica atrás do conteúdo */
+            z-index: -1;
             overflow: hidden;
         }
         .background-slideshow img {
@@ -29,18 +29,18 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 2s ease-in-out; /* Suavidade na troca das imagens */
+            transition: opacity 2s ease-in-out;
         }
         .background-slideshow img.active {
-            opacity: 1; /* Imagem ativa visível */
+            opacity: 1;
         }
         .login-container {
             text-align: center;
             width: 90%;
             max-width: 320px;
             padding: 20px;
-            background: rgba(0, 100, 0, 0.6); /* Fundo verde escuro mais transparente */
-            border-radius: 20px; /* Borda mais arredondada */
+            background: rgba(0, 100, 0, 0.6);
+            border-radius: 20px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
         .login-container img {
@@ -61,7 +61,7 @@
             border-color: white;
         }
         .btn-custom, .btn-signup {
-            background: linear-gradient(90deg, #1e90ff, #00bfff);
+            background: #006400; /* Cor verde escuro */
             border: none;
             border-radius: 20px;
             color: white;
@@ -70,14 +70,8 @@
             width: 100%;
         }
         .btn-custom:hover, .btn-signup:hover {
-            background: #00bfff;
-            color: black;
-        }
-        .forgot-password {
-            color: white;
-            text-decoration: none;
-            margin-bottom: 20px;
-            display: block;
+            background: #004d00; /* Tom de verde mais escuro ao passar o mouse */
+            color: #fff;
         }
         .btn-facebook {
             background: linear-gradient(90deg, #3b5998, #8b9dc3);
@@ -98,7 +92,6 @@
         <img src="https://i.pinimg.com/564x/ee/9c/cd/ee9ccd1d99946a0d7b8096dc6e73eb06.jpg" class="active" alt="Background 1">
         <img src="https://i.pinimg.com/564x/f9/e1/d4/f9e1d4b190456d4fc039ff1ff50dd4dc.jpg" alt="Background 2">
         <img src="https://i.pinimg.com/564x/a0/bf/2b/a0bf2b8a050bd6238dbf71ab542ff86f.jpg" alt="Background 3">
-        <!-- Adicione mais imagens conforme necessário -->
     </div>
     <div class="login-container">
         <img src="https://storage.googleapis.com/a1aa/image/LwKuSZJxAuYXJlYjBKzfId8ubGajkdYmfEzgVKFVowqaZeKnA.jpg" alt="Paper airplane icon" height="50" width="50">
@@ -111,15 +104,20 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
             </div>
-            <button type="button" class="btn btn-custom" onclick="window.location.href='home.html'">Fazer Login</button>
-
+            <button type="button" class="btn btn-custom" onclick="window.location.href='home.html'">
+                <i class="fas fa-sign-in-alt"></i> Fazer Login
+            </button>
         </form>
         <a href="#" class="forgot-password">Perdeu a senha?</a>
         <button class="btn btn-facebook">
             <i class="fab fa-facebook-f"></i> Login com Facebook
         </button>
-        <button class="btn btn-signup">Cadastre-se como Profissional</button>
-        <button class="btn btn-signup">Cadastre-se como Cliente</button>
+        <button class="btn btn-signup">
+            <i class="fas fa-user-tie"></i> Cadastre-se como Profissional
+        </button>
+        <button class="btn btn-signup">
+            <i class="fas fa-user"></i> Cadastre-se como Cliente
+        </button>
     </div>
 
     <script>
@@ -132,7 +130,7 @@
             slides[currentSlide].classList.add('active');
         }
 
-        setInterval(showNextSlide, 2000); // Troca de imagem a cada 5 segundos
+        setInterval(showNextSlide, 3000); // Troca de imagem a cada 5 segundos
     </script>
 </body>
 </html>
