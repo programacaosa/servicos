@@ -1,251 +1,201 @@
-<html>
- <head>
-  <title>
-   Designer Ranking
-  </title>
-  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <style>
-   body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Ranking</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
             background-color: #f8f9fa;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
         .header {
             background: linear-gradient(90deg, #ff6fd8, #3813c2);
             color: white;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             position: relative;
         }
+
         .header .back-icon, .header .menu-icon {
             position: absolute;
-            top: 20px;
-            font-size: 20px;
+            top: 10px;
+            font-size: 24px;
         }
+
         .header .back-icon {
-            left: 20px;
+            left: 15px;
         }
+
         .header .menu-icon {
-            right: 20px;
+            right: 15px;
         }
+
         .header .nav-tabs {
             border-bottom: none;
+            padding-top: 5px;
         }
+
         .header .nav-link {
             color: white;
+            font-size: 14px;
+            padding: 5px 10px;
         }
+
         .header .nav-link.active {
             border: none;
             border-bottom: 2px solid white;
         }
+
         .card {
             border-radius: 20px;
-            margin: 10px 20px;
-            padding: 20px;
+            margin: 15px;
+            padding: 15px;
             color: white;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
+
         .card .profile-img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-bottom: 10px;
         }
+
         .card .ranking {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
         }
+
         .card .dots {
             position: absolute;
-            top: 20px;
-            right: 60px;
-            font-size: 24px;
+            top: 15px;
+            right: 50px;
+            font-size: 20px;
         }
+
+        .card h5 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin: 0;
+        }
+
         .card .stats {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            width: 100%;
             margin-top: 10px;
+            font-size: 12px;
         }
-  </style>
- </head>
- <body>
-  <div class="header">
-   <i class="fas fa-arrow-left back-icon">
-   </i>
-   <h2>
-    Designer
-   </h2>
-   <i class="fas fa-bars menu-icon">
-   </i>
-   <ul class="nav nav-tabs justify-content-center">
-    <li class="nav-item">
-     <a class="nav-link active" href="#">
-      Category
-     </a>
-    </li>
-    <li class="nav-item">
-     <a class="nav-link" href="#">
-      Attention
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div class="card" style="background-color: #4a90e2;">
-   <div class="d-flex align-items-center">
-    <img alt="Profile image of David Borg" class="profile-img" height="50" src="https://storage.googleapis.com/a1aa/image/Gd6dsETOZJ4dKJYL54j8mKRC1gtS6KLYmFgyypf5Mk1anvyJA.jpg" width="50"/>
-    <div>
-     <h5>
-      David Borg
-     </h5>
-     <p>
-      Title: Flying wings
-     </p>
+
+        @media (max-width: 576px) {
+            .card .stats span {
+                font-size: 11px;
+            }
+
+            .card .profile-img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .card h5 {
+                font-size: 16px;
+            }
+
+            .card p {
+                font-size: 12px;
+            }
+
+            .header h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <i class="fas fa-arrow-left back-icon"></i>
+        <h2>Lista de profissionais</h2>
+        <i class="fas fa-bars menu-icon"></i>
+        <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Categrias</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Profisionais verificados</a>
+            </li>
+        </ul>
     </div>
-   </div>
-   <div class="ranking">
-    1
-   </div>
-   <div class="dots">
-    <i class="fas fa-ellipsis-h">
-    </i>
-   </div>
-   <div class="stats">
-    <span>
-     2342 Popularity
-    </span>
-    <span>
-     4736 Like
-    </span>
-    <span>
-     136 followed
-    </span>
-   </div>
-  </div>
-  <div class="card" style="background-color: #f5a623;">
-   <div class="d-flex align-items-center">
-    <img alt="Profile image of Lucy" class="profile-img" height="50" src="https://storage.googleapis.com/a1aa/image/FkRe4rAA0lztIKobieyBn5STDQxdtAg0DBNfzbHhaZQzdeVOB.jpg" width="50"/>
-    <div>
-     <h5>
-      Lucy
-     </h5>
-     <p>
-      Title: Growing up trouble
-     </p>
+    
+    <!-- Card 1 -->
+    <div class="card" style="background-color: #4a90e2;">
+        <img src="https://storage.googleapis.com/a1aa/image/Gd6dsETOZJ4dKJYL54j8mKRC1gtS6KLYmFgyypf5Mk1anvyJA.jpg" class="profile-img" alt="Profile image of David Borg">
+        <h5>David Borg</h5>
+        <p>Profissão: Encanador </p>
+        <div class="ranking">1</div>
+        <div class="dots"><i class="fas fa-ellipsis-h"></i></div>
+        <div class="stats">
+            <span>Contato comercial: 9999</span>
+            <span>4736 curtidas</span>
+            <span>10 Anos de atuação</span>
+        </div>
     </div>
-   </div>
-   <div class="ranking">
-    2
-   </div>
-   <div class="dots">
-    <i class="fas fa-ellipsis-h">
-    </i>
-   </div>
-   <div class="stats">
-    <span>
-     2342 Popularity
-    </span>
-    <span>
-     4736 Like
-    </span>
-    <span>
-     136 followed
-    </span>
-   </div>
-  </div>
-  <div class="card" style="background-color: #d0021b;">
-   <div class="d-flex align-items-center">
-    <img alt="Profile image of Jerry Cool West" class="profile-img" height="50" src="https://storage.googleapis.com/a1aa/image/mFwcJB3PFR6xNtr5pWfKHfQviv07YiepiBM3Ahr4fung78VOB.jpg" width="50"/>
-    <div>
-     <h5>
-      Jerry Cool West
-     </h5>
-     <p>
-      Title: Sculptor's diary
-     </p>
+    
+    <!-- Card 2 -->
+    <div class="card" style="background-color: #f5a623;">
+        <img src="https://storage.googleapis.com/a1aa/image/FkRe4rAA0lztIKobieyBn5STDQxdtAg0DBNfzbHhaZQzdeVOB.jpg" class="profile-img" alt="Profile image of Lucy">
+        <h5>Lucy</h5>
+        <p>Title: Growing up trouble</p>
+        <div class="ranking">2</div>
+        <div class="dots"><i class="fas fa-ellipsis-h"></i></div>
+        <div class="stats">
+            <span>2342 Popularity</span>
+            <span>4736 Likes</span>
+            <span>136 Followed</span>
+        </div>
     </div>
-   </div>
-   <div class="ranking">
-    3
-   </div>
-   <div class="dots">
-    <i class="fas fa-ellipsis-h">
-    </i>
-   </div>
-   <div class="stats">
-    <span>
-     2342 Popularity
-    </span>
-    <span>
-     4736 Like
-    </span>
-    <span>
-     136 followed
-    </span>
-   </div>
-  </div>
-  <div class="card" style="background-color: #bd10e0;">
-   <div class="d-flex align-items-center">
-    <img alt="Profile image of Bold" class="profile-img" height="50" src="https://storage.googleapis.com/a1aa/image/lt80PSAcDtK3IdBJuhjT3Tjt1p0AcOyo4mm8eo5maNe2OfKnA.jpg" width="50"/>
-    <div>
-     <h5>
-      Bold
-     </h5>
-     <p>
-      Title: Illustration of little girl
-     </p>
+    
+    <!-- Card 3 -->
+    <div class="card" style="background-color: #d0021b;">
+        <img src="https://storage.googleapis.com/a1aa/image/mFwcJB3PFR6xNtr5pWfKHfQviv07YiepiBM3Ahr4fung78VOB.jpg" class="profile-img" alt="Profile image of Jerry Cool West">
+        <h5>Jerry Cool West</h5>
+        <p>Title: Sculptor's diary</p>
+        <div class="ranking">3</div>
+        <div class="dots"><i class="fas fa-ellipsis-h"></i></div>
+        <div class="stats">
+            <span>2342 Popularity</span>
+            <span>4736 Likes</span>
+            <span>136 Followed</span>
+        </div>
     </div>
-   </div>
-   <div class="ranking">
-    4
-   </div>
-   <div class="dots">
-    <i class="fas fa-ellipsis-h">
-    </i>
-   </div>
-   <div class="stats">
-    <span>
-     2342 Popularity
-    </span>
-    <span>
-     4736 Like
-    </span>
-    <span>
-     136 followed
-    </span>
-   </div>
-  </div>
-  <div class="card" style="background-color: #7ed321;">
-   <div class="d-flex align-items-center">
-    <img alt="Profile image of David Borg" class="profile-img" height="50" src="https://storage.googleapis.com/a1aa/image/Gd6dsETOZJ4dKJYL54j8mKRC1gtS6KLYmFgyypf5Mk1anvyJA.jpg" width="50"/>
-    <div>
-     <h5>
-      David Borg
-     </h5>
-     <p>
-      Title: Flying wings
-     </p>
+    
+    <!-- Card 4 -->
+    <div class="card" style="background-color: #bd10e0;">
+        <img src="https://storage.googleapis.com/a1aa/image/lt80PSAcDtK3IdBJuhjT3Tjt1p0AcOyo4mm8eo5maNe2OfKnA.jpg" class="profile-img" alt="Profile image of Bold">
+        <h5>Bold</h5>
+        <p>Title: Illustration of little girl</p>
+        <div class="ranking">4</div>
+        <div class="dots"><i class="fas fa-ellipsis-h"></i></div>
+        <div class="stats">
+            <span>2342 Popularity</span>
+            <span>4736 Likes</span>
+            <span>136 Followed</span>
+        </div>
     </div>
-   </div>
-   <div class="ranking">
-    5
-   </div>
-   <div class="dots">
-    <i class="fas fa-ellipsis-h">
-    </i>
-   </div>
-   <div class="stats">
-    <span>
-     2342 Popularity
-    </span>
-    <span>
-     4736 Like
-    </span>
-    <span>
-     136 followed
-    </span>
-   </div>
-  </div>
- </body>
+</body>
 </html>
