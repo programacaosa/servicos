@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background: url('https://img.freepik.com/vetores-gratis/quadro-de-fundo-fluido-azul_53876-99019.jpg') no-repeat center center fixed;
+            background: url('https://i.pinimg.com/564x/cb/96/31/cb9631d4ab69d7aacae2e74404027339.jpg') no-repeat center center fixed;
             background-size: cover;
             color: white;
             font-family: Arial, sans-serif;
@@ -21,9 +21,9 @@
             width: 90%;
             max-width: 320px;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8); /* Aumentar opacidade */
             border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         }
         .login-container img {
             width: 50px;
@@ -36,14 +36,15 @@
             border-radius: 0;
             color: white;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombras de texto para entradas */
         }
         .form-control:focus {
             box-shadow: none;
             border-color: white;
         }
         .btn-custom, .btn-signup {
-            background: transparent;
-            border: 1px solid white;
+            background: linear-gradient(90deg, #1e90ff, #00bfff); /* Gradiente azul */
+            border: none;
             border-radius: 20px;
             color: white;
             padding: 10px 20px;
@@ -51,7 +52,7 @@
             width: 100%;
         }
         .btn-custom:hover, .btn-signup:hover {
-            background: white;
+            background: #00bfff; /* Azul mais claro no hover */
             color: black;
         }
         .forgot-password {
@@ -61,13 +62,13 @@
             display: block;
         }
         .btn-facebook {
-            background: transparent;
-            border: 1px solid white;
+            background: linear-gradient(90deg, #3b5998, #8b9dc3); /* Gradiente Facebook */
+            border: none;
             border-radius: 20px;
             color: white;
             padding: 10px 20px;
             width: 100%;
-            margin-bottom: 15px; /* Adicionando margem inferior */
+            margin-bottom: 15px; /* Margem inferior */
         }
         .btn-facebook i {
             margin-right: 10px;
@@ -88,7 +89,7 @@
             </div>
             <button type="submit" class="btn btn-custom">Fazer Login</button>
         </form>
-        <a href="#" class="forgot-password">Forgot Password?</a>
+        <a href="#" class="forgot-password">Perdeu a senha?</a>
         <button class="btn btn-facebook">
             <i class="fab fa-facebook-f"></i> Login com Facebook
         </button>
