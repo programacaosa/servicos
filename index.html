@@ -1,186 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestadores de Serviços</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            background-color: #faf3ec; /* Cor de fundo clara */
-        }
-
-        .banner {
-            height: 400px;
-            position: relative; /* Para posicionar o campo de pesquisa */
-        }
-
-        .search-input {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%; /* Largura do campo de pesquisa */
-        }
-
-        .card {
-            height: 100%; /* Garante que todos os cards tenham a mesma altura */
-        }
-
-        .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-        }
-
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .navbar-brand {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* Alteração da cor de fundo do header */
-        .navbar {
-            background-color: #27002e; /* Nova cor de fundo */
-        }
-
-        .navbar-brand img {
-            width: 80px; /* Aumentar tamanho da logo */
-        }
-
-        .btn-custom {
-            background-color: #d39b00; /* Cor personalizada */
-            border-color: #42004e;
-            font-size: 0.9rem; /* Botões menores */
-            padding: 6px 12px; /* Ajusta o tamanho do botão */
-        }
-
-        .btn-custom:hover {
-            background-color: #33003e; /* Cor mais escura ao passar o mouse */
-            border-color: #33003e;
-        }
-
-        /* Estilos para o footer */
-        footer {
-            background-color: #27002e;
-            color: white;
-            padding: 20px 0;
+        .search-bar {
+            margin-top: 20px;
             text-align: center;
         }
 
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+
+        .card-text {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
         .footer-icons a {
-            color: white;
-            margin: 0 15px;
-            font-size: 24px;
+            margin: 0 10px;
+            color: #333;
+            font-size: 1.5em;
         }
 
-        .footer-icons a:hover {
-            color: #d39b00; /* Muda a cor ao passar o mouse */
+        footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px 0;
         }
 
-        /* Estilos para o botão de chat */
         .chat-icon {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #d39b00;
-            color: white;
+            background-color: #007bff;
+            color: #fff;
             border: none;
             border-radius: 50%;
             padding: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            font-size: 24px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            z-index: 1000; /* Fica acima de outros elementos */
-        }
-
-        .chat-icon:hover {
-            background-color: #33003e; /* Cor mais escura ao passar o mouse */
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
-                <img src="https://prestadoresdeservicos.com.br/logo/logo.png" alt="Logo"> <!-- Substitua por sua logo -->
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link text-white" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Sobre Nós</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Blog</a>
-                    </li>
-                </ul>
+    <!-- Banner com Campo de Pesquisa -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Encontre Prestadores de Serviços</h1>
+            <p class="lead">Pesquise pelos melhores profissionais na sua região.</p>
+            <div class="search-bar">
+                <input type="text" class="form-control" placeholder="Digite o serviço que procura...">
             </div>
-        </nav>
-    </header>
-
-    <!-- Banner com Carrossel de Imagens e Campo de Pesquisa -->
-    <section>
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade banner" data-ride="carousel" data-interval="2000">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://i.pinimg.com/564x/32/d5/50/32d550aa449412610ecc7fe152aa49ea.jpg" class="d-block w-100" alt="Imagem 1"> <!-- Substitua por suas imagens -->
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.pinimg.com/564x/ef/a8/9a/efa89ae93da674f446d163ae088fc9a5.jpg" class="d-block w-100" alt="Imagem 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.pinimg.com/564x/1a/aa/43/1aaa433a7b9f354b833ee4cf30e0f27e.jpg" class="d-block w-100" alt="Imagem 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.pinimg.com/564x/d3/b0/3f/d3b03fb2220cb2fd4042120e3b49d2f7.jpg" class="d-block w-100" alt="Imagem 4">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Próximo</span>
-            </a>
-        </div>
-        
-        <!-- Campo de Pesquisa -->
-        <div class="search-input">
-            <input type="text" class="form-control" placeholder="Pesquisar serviços..." aria-label="Pesquisar">
         </div>
     </section>
 
-    <!-- Cards dos Prestadores de Serviços -->
-    <section class="py-5">
+    <!-- Cards de Prestadores de Serviços -->
+    <section class="my-5">
         <div class="container">
             <div class="row">
                 <!-- Card 1 -->
@@ -188,8 +85,8 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <i class="fas fa-hammer fa-3x"></i>
-                            <h5 class="card-title">Carpinteiro</h5>
-                            <p class="card-text">Serviços de carpintaria de alta qualidade.</p>
+                            <h5 class="card-title">Marceneiro</h5>
+                            <p class="card-text">Serviços de marcenaria sob medida.</p>
                         </div>
                     </div>
                 </div>
@@ -197,9 +94,9 @@
                 <div class="col-md-6 mb-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            <i class="fas fa-car fa-3x"></i>
-                            <h5 class="card-title">Motorista</h5>
-                            <p class="card-text">Motoristas particulares disponíveis.</p>
+                            <i class="fas fa-toolbox fa-3x"></i>
+                            <h5 class="card-title">Eletricista</h5>
+                            <p class="card-text">Instalações e reparos elétricos.</p>
                         </div>
                     </div>
                 </div>
