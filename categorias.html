@@ -95,12 +95,12 @@
         </div>
         <h1>Faça uma busca por categorias</h1>
         <div class="search-bar">
-            <input type="text" placeholder="Faça uma busca mais detalhada">
+            <input type="text" id="searchInput" placeholder="Busca detalhada por categoria" oninput="filterCategories()">
         </div>
     </div>
     <div class="container-fluid">
         <h2 class="text-center my-3">Tecnologia</h2>
-        <div class="categories">
+        <div class="categories" id="techCategories">
             <div class="category" onclick="openCategoryPage('agente-ti.html')">
                 <i class="fas fa-spa"></i>
                 <p>Agente de TI</p>
@@ -123,8 +123,8 @@
             </div>
         </div>
 
-        <h2 class="text-center my-3">Marketing</h2> <!-- Novo título para as categorias -->
-        <div class="categories">
+        <h2 class="text-center my-3">Marketing</h2>
+        <div class="categories" id="marketingCategories">
             <div class="category" onclick="openCategoryPage('designer.html')">
                 <i class="fas fa-paint-brush"></i>
                 <p>Designer Gráfico</p>
@@ -147,28 +147,27 @@
             </div>
         </div>
     </div>
-	<h2 class="text-center my-3">Serviços gerais</h2> <!-- Novo título para as categorias -->
-        <div class="categories">
-            <div class="category" onclick="openCategoryPage('designer.html')">
-                <i class="fas fa-baby"></i>
-                <p>Baba</p>
-            </div>
-            <div class="category" onclick="openCategoryPage('marketing.html')">
-                <i class="fas fa-hammer"></i>
-                <p>Pedreiro</p>
-            </div>
-            <div class="category" onclick="openCategoryPage('seo.html')">
-                <i class="fas fa-ruler-combined"></i>
-                <p>Carpinteiro</p>
-            </div>
-            <div class="category" onclick="openCategoryPage('redes-sociais.html')">
-                <i class="fas fa-user-friends"></i>
-                <p>Cuidadora de idosos</p>
-            </div>
-            <div class="category" onclick="openCategoryPage('seguranca.html')">
-                <i class="fas fa-wrench"></i>
-                <p>Encanador</p>
-            </div>
+    <h2 class="text-center my-3">Serviços gerais</h2>
+    <div class="categories" id="generalServicesCategories">
+        <div class="category" onclick="openCategoryPage('designer.html')">
+            <i class="fas fa-baby"></i>
+            <p>Baba</p>
+        </div>
+        <div class="category" onclick="openCategoryPage('marketing.html')">
+            <i class="fas fa-hammer"></i>
+            <p>Pedreiro</p>
+        </div>
+        <div class="category" onclick="openCategoryPage('seo.html')">
+            <i class="fas fa-ruler-combined"></i>
+            <p>Carpinteiro</p>
+        </div>
+        <div class="category" onclick="openCategoryPage('redes-sociais.html')">
+            <i class="fas fa-user-friends"></i>
+            <p>Cuidadora de idosos</p>
+        </div>
+        <div class="category" onclick="openCategoryPage('seguranca.html')">
+            <i class="fas fa-wrench"></i>
+            <p>Encanador</p>
         </div>
     </div>
 
@@ -214,22 +213,33 @@
         function showError(error) {
             switch(error.code) {
                 case error.PERMISSION_DENIED:
-                    document.getElementById('location').innerText = "Permissão de localização negada.";
+                    document.getElementById('location').innerText = "Usuário negou a solicitação de Geolocalização.";
                     break;
                 case error.POSITION_UNAVAILABLE:
-                    document.getElementById('location').innerText = "Informação de localização indisponível.";
+                    document.getElementById('location').innerText = "Localização indisponível.";
                     break;
                 case error.TIMEOUT:
-                    document.getElementById('location').innerText = "Tempo de solicitação de localização esgotado.";
+                    document.getElementById('location').innerText = "A solicitação para obter a localização do usuário expirou.";
                     break;
                 case error.UNKNOWN_ERROR:
-                    document.getElementById('location').innerText = "Erro desconhecido.";
+                    document.getElementById('location').innerText = "Ocorreu um erro desconhecido.";
                     break;
             }
         }
 
-        // Chama a função para obter a localização ao carregar a página
-        getLocation();
+        // Função para filtrar as categorias com base na pesquisa
+        function filterCategories() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const categories = document.querySelectorAll('.category');
+
+            categories.forEach(category => {
+                const text = category.textContent.toLowerCase();
+                category.style.display = text.includes(searchInput) ? 'block' : 'none';
+            });
+        }
+
+        // Chama a função de localização ao carregar a página
+        window.onload = getLocation;
     </script>
 </body>
 </html>
