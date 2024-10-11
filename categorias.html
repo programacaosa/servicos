@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATEGORIAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #2F4F4F;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header .location {
+            font-size: 14px;
+        }
+        .header .location i {
+            margin-right: 5px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .search-bar {
+            margin: 20px 0;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            gap: 10px;
+        }
+        .categories::-webkit-scrollbar {
+            height: 6px;
+        }
+        .categories::-webkit-scrollbar-thumb {
+            background-color: #6a1b9a;
+            border-radius: 10px;
+        }
+        .category {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            text-align: center;
+            padding: 20px;
+            flex: 0 0 auto;
+            cursor: pointer;
+        }
+        .category i {
+            font-size: 24px;
+            color: #2F4F4F;
+            margin-bottom: 10px;
+        }
+        .category p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer {
+            background-color: #2F4F4F;
+            border-top: 1px solid #ccc;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer i {
+            font-size: 24px;
+            color: white;
+        }
+        .footer .active {
+            color: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="location" id="location">
+            <i class="fas fa-map-marker-alt"></i> Carregando localização...
+        </div>
+        <h1>Faça uma busca por categorias</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for service">
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h2 class="text-center my-3">Tecnologia</h2>
+        <div class="categories">
+            <div class="category" onclick="openCategoryPage('agente-ti.html')">
+                <i class="fas fa-spa"></i>
+                <p>Agente de TI</p>
+            </div>
+            <div class="category" onclick="openCategoryPage('programador.html')">
+                <i class="fas fa-home"></i>
+                <p>Programador</p>
+            </div>
+            <div class="category" onclick="openCategoryPage('tecnico-rede.html')">
+                <i class="fas fa-bug"></i>
+                <p>Técnico em rede</p>
+            </div>
+            <div class="category" onclick="openCategoryPage('concertos-celular.html')">
+                <i class="fas fa-car"></i>
+                <p>Concertos de celular</p>
+            </div>
+            <div class="category" onclick="openCategoryPage('formatacao-computadores.html')">
+                <i class="fas fa-desktop"></i>
+                <p>Concerto e formatação computadores</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <i class="fas fa-tasks"></i>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-th-large active"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <script>
+        // Função para abrir a página da categoria clicada
+        function openCategoryPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+
+        // Função para obter a localização do usuário
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('location').innerText = "Geolocalização não suportada.";
+            }
+        }
+
+        // Função para mostrar a localização com base nas coordenadas
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            // Exemplo de chamada a uma API externa para converter coordenadas em uma cidade
+            fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('location').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${data.city}, ${data.principalSubdivision}`;
+                })
+                .catch(error => {
+                    document.getElementById('location').innerText = "Não foi possível obter a localização.";
+                });
+        }
+
+        // Função para lidar com erros de geolocalização
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('location').innerText = "Permissão de localização negada.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('location').innerText = "Informação de localização indisponível.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('location').innerText = "Tempo de solicitação de localização esgotado.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('location').innerText = "Erro desconhecido.";
+                    break;
+            }
+        }
+
+        // Chama a função para obter a localização ao carregar a página
+        getLocation();
+    </script>
+</body>
+</html>
