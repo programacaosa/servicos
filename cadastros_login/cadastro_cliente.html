@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            height: 100vh; /* Ocupa toda a altura da tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%; /* Largura 100% da tela */
+            max-width: 450px; /* Largura máxima */
+            max-height: 600px; /* Altura máxima */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .login-header {
+            background-color: #002200; /* Cor verde escura */
+            height: 80px; /* Altura fixa para o cabeçalho */
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Alinha ao centro verticalmente */
+        }
+        .login-body {
+            padding: 40px 30px 20px 30px;
+            text-align: center;
+            overflow-y: auto; /* Habilita rolagem vertical */
+            flex-grow: 1; /* Permite que o corpo do login expanda */
+        }
+        .login-body h2 {
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-control {
+            margin-bottom: 20px;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .btn-login {
+            background-color: #002200; /* Cor verde escura */
+            color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+            width: 100%;
+        }
+        .login-footer {
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+        }
+        .login-footer a {
+            color: #002200; /* Cor verde escura */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <!-- Logo removida -->
+        </div>
+        <div class="login-body">
+            <h2>Cadastro Cliente</h2>
+            <form>
+                <input class="form-control" placeholder="Nome" type="text" required/>
+                <input class="form-control" placeholder="Idade" type="number" required/>
+                <input class="form-control" placeholder="Foto (URL)" type="url" required/>
+                <input class="form-control" placeholder="Endereço" type="text" required/>
+                <input class="form-control" placeholder="Contato" type="tel" required/>
+                <input class="form-control" placeholder="Email" type="email" required/>
+                <input class="form-control" placeholder="Senha" type="password" required/>
+                <button class="btn btn-login" type="submit">Cadastrar</button>
+            </form>
+        </div>
+        <div class="login-footer">
+            Já tem conta?
+            <a href="login.html">Faça login</a>
+        </div>
+    </div>
+</body>
+</html>
