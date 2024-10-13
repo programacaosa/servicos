@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            height: 100vh; /* Ocupa toda a altura da tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%; /* Largura 100% da tela */
+            height: 100%; /* Altura 100% da tela */
+            max-width: 450px; /* Largura máxima */
+            max-height: 600px; /* Altura máxima para evitar esticamento excessivo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Espaçamento entre os elementos */
+        }
+        .login-header {
+            background-color: #002200; /* Cor verde escura */
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .login-header img {
+            width: 50px;
+            height: 50px;
+        }
+        .login-header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+        }
+        .login-body {
+            padding: 40px 30px 20px 30px;
+            text-align: center;
+            flex-grow: 1; /* Permite que o corpo do login expanda */
+        }
+        .login-body h2 {
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-control {
+            margin-bottom: 20px;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .btn-login {
+            background-color: #002200; /* Cor verde escura */
+            color: white;
+            border-radius: 25px;
+            padding: 10px 20px;
+            width: 100%;
+        }
+        .login-footer {
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+        }
+        .login-footer a {
+            color: #002200; /* Cor verde escura */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img alt="Logo" height="50" src="https://storage.googleapis.com/a1aa/image/f73me0a16zh3eIPH1wVLfYg6eCTViYqMtDCXyh4sdqvPN0tcC.jpg" width="50"/>
+        </div>
+        <div class="login-body">
+            <h2>Login Cliente</h2>
+            <form>
+                <input class="form-control" placeholder="Email" type="email" value="vijaykumar789@gmail.com"/>
+                <input class="form-control" placeholder="Password" type="password" value="••••••••"/>
+                <button class="btn btn-login" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="login-footer">
+            Ainda não tem conta?
+            <a href="cadastro_cliente.html">Cadastre-se</a>
+        </div>
+    </div>
+</body>
+</html>
