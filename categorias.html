@@ -173,11 +173,11 @@
     </div>
 
     <div class="footer">
-        <i class="fas fa-tasks"></i>
+        <i class="fas fa-tasks" onclick="openTasksPage()"></i> <!-- Adicionado onclick aqui -->
         <i class="fas fa-bell"></i>
         <i class="fas fa-th-large active"></i>
-        <i class="fas fa-user"></i>
-        <i class="fas fa-comments" onclick="openChatPage()"></i> <!-- Adicionado onclick aqui -->
+        <i class="fas fa-user" onclick="openUserPage()"></i>
+        <i class="fas fa-comments" onclick="openChatPage()"></i>
     </div>
 
     <script>
@@ -186,9 +186,19 @@
             window.location.href = pageUrl;
         }
 
+        // Função para abrir a página de tarefas
+        function openTasksPage() {
+            window.location.href = 'tarefas.html'; // Substitua pelo nome correto da página de tarefas
+        }
+
         // Função para abrir a página de chat
         function openChatPage() {
             window.location.href = 'chat.html'; // Substitua pelo nome correto da página de chat
+        }
+
+        // Função para abrir a página de perfil
+        function openUserPage() {
+            window.location.href = 'perfil.html'; // Substitua pelo nome correto da página de perfil
         }
 
         // Função para obter a localização do usuário
