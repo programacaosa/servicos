@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela com Cards e Botão Voltar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        .btn-voltar {
+            background-color: #455141;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-voltar:hover {
+            background-color: #cc2a23;
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding: 10px;
+            }
+
+            .card {
+                margin: 10px 0;
+            }
+
+            .btn-voltar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Card Superior -->
+        <a href="login.html" class="card-link">
+            <div class="card">
+                <img src="https://tacontratado.com.br/wp-content/uploads/2021/06/blog022.jpeg" class="card-img-top" alt="Card Superior">
+                <div class="card-body">
+                    <h5 class="card-title">Login como profissional</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card Inferior -->
+        <a href="login_cliente.html" class="card-link">
+            <div class="card">
+                <img src="https://pontaltech.com.br/wp-content/uploads/2021/05/Fidelizacao-de-clientes-1024x683.png" class="card-img-top" alt="Card Inferior">
+                <div class="card-body">
+                    <h5 class="card-title">Login como cliente</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        </a>
+
+        <!-- Botão Voltar -->
+        <button class="btn-voltar" onclick="window.history.back();">Voltar</button>
+    </div>
+</body>
+</html>
