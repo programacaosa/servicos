@@ -9,18 +9,64 @@
     <style>
         body {
             background-color: #f8f9fa;
+            overflow: hidden;
         }
         .header {
             background-color: #2F4F4F;
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .header h1, .header p {
+            position: relative;
+            z-index: 1;
         }
         .card {
             transition: transform 0.2s;
+            border-radius: 15px;
+            overflow: hidden;
         }
         .card:hover {
             transform: scale(1.05);
+        }
+        .btn-dark-green {
+            background-color: #2E8B57;
+            color: white;
+        }
+        .btn-dark-green:hover {
+            background-color: #246b46;
+        }
+        .footer {
+            background-color: #2F4F4F;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
         }
     </style>
 </head>
@@ -34,69 +80,69 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Curso 1">
                     <div class="card-body">
                         <h5 class="card-title">Curso de Programação</h5>
                         <p class="card-text">Aprenda a programar do zero com este curso completo.</p>
-                        <a href="curso_programacao.html" class="btn btn-primary">Saiba mais</a>
+                        <a href="curso_programacao.html" class="btn btn-dark-green">Saiba mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Curso 2">
                     <div class="card-body">
                         <h5 class="card-title">Curso de Design Gráfico</h5>
                         <p class="card-text">Desenvolva suas habilidades em design com este curso prático.</p>
-                        <a href="curso_design.html" class="btn btn-primary">Saiba mais</a>
+                        <a href="curso_design.html" class="btn btn-dark-green">Saiba mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Curso 3">
                     <div class="card-body">
                         <h5 class="card-title">Curso de Marketing Digital</h5>
                         <p class="card-text">Domine as estratégias de marketing digital para alavancar seu negócio.</p>
-                        <a href="curso_marketing.html" class="btn btn-primary">Saiba mais</a>
+                        <a href="curso_marketing.html" class="btn btn-dark-green">Saiba mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Curso 4">
                     <div class="card-body">
                         <h5 class="card-title">Curso de Fotografia</h5>
                         <p class="card-text">Aprenda os fundamentos da fotografia e melhore suas habilidades.</p>
-                        <a href="curso_fotografia.html" class="btn btn-primary">Saiba mais</a>
+                        <a href="curso_fotografia.html" class="btn btn-dark-green">Saiba mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Curso 5">
                     <div class="card-body">
                         <h5 class="card-title">Curso de Finanças Pessoais</h5>
                         <p class="card-text">Aprenda a gerenciar suas finanças e investir com sabedoria.</p>
-                        <a href="curso_financas.html" class="btn btn-primary">Saiba mais</a>
+                        <a href="curso_financas.html" class="btn btn-dark-green">Saiba mais</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card">
+                <div class="card shadow">
                     <img src="https://via.placeholder.com/300" class="card-img-top" alt="Curso 6">
                     <div class="card-body">
                         <h5 class="card-title">Curso de Desenvolvimento Web</h5>
                         <p class="card-text">Construa sites e aplicações web com este curso abrangente.</p>
-                        <a href="curso_web.html" class="btn btn-primary">Saiba mais</a>
+                        <a href="curso_web.html" class="btn btn-dark-green">Saiba mais</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer bg-dark text-white text-center py-3">
+    <footer class="footer">
         <p>&copy; 2024 Todos os direitos reservados</p>
     </footer>
 
